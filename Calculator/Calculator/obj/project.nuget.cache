@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GT7DE4iAk9/LnzQ9r6J02Wrs140sN5eu9ZEm2rsYMyc3WaZu9rBf644IsQEmbCbGwge/24QxotQxj3UiW5E2GA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Shayan\\semester4\\Calculator\\Calculator\\Calculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Shayan\\.nuget\\packages\\org.matheval\\1.0.0.3\\org.matheval.1.0.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
