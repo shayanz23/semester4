@@ -98,7 +98,7 @@ namespace WinFormsApp1
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Calculator\nVersion: 1\nBy: Shayan Zahedanaraki");
+            MessageBox.Show("Calculator\nVersion: 2\nBy: Shayan Zahedanaraki");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
