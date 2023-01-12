@@ -7,6 +7,7 @@
 /// </summary>
 
 using org.matheval;
+using org.matheval.Node;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
@@ -19,81 +20,52 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            mainTextBox.Text += "1";
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "+";
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += ".";
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length-1);
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Clear();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Expression expression = new Expression(mainTextBox.Text.ToString());
-            try
+            if (((Button)sender).Text == "=")
             {
-                var v = expression.Eval();
-                mainTextBox.Text = v.ToString();
-                // Items Are added to list, but just not scrolled to bottom automatically.
-                listBox1.Items.Add(v.ToString());
-            }
-            catch (Exception b)
+                Expression expression = new Expression(mainTextBox.Text.ToString());
+                try
+                {
+                    var v = expression.Eval();
+                    mainTextBox.Text = v.ToString();
+                    // Items Are added to list, but just not scrolled to bottom automatically.
+                    listBox1.Items.Add(v.ToString());
+                }
+                catch (Exception b)
+                {
+                    MessageBox.Show("Please check your format and try again.", "Incorect format.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } else if(((Button)sender).Text == "C")
             {
-                MessageBox.Show("Please check your format and try again.", "Incorect format.",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mainTextBox.Clear();
+                listBox1.Items.Clear();
+            } else if(((Button)sender).Text == "CE")
+            {
+                mainTextBox.Clear();
+            } else if (((Button)sender).Text == "<-")
+            {
+                mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length - 1);
+            } else if (((Button)sender).Text == "()")
+            {
+                if ((mainTextBox.Text.ToString().Count(t => t == '(') + mainTextBox.Text.ToString().Count(t => t == ')')) % 2 == 0)
+                {
+                    mainTextBox.Text += "(";
+                }
+                else
+                {
+                    mainTextBox.Text += ")";
+                }
+            } else
+            {
+                mainTextBox.Text += ((Button)sender).Text.ToString();
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "2";
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "3";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "8";
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "/";
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "^";
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,60 +78,5 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        private void button_9_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "9";
-        }
-
-        private void button_0_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "0";
-        }
-
-        private void button_4_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "4";
-        }
-
-        private void button_5_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "5";
-        }
-
-        private void button_6_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "6";
-        }
-
-        private void button_subtraction_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "-";
-        }
-
-        private void button_7_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "7";
-        }
-
-        private void button_multiplication_Click(object sender, EventArgs e)
-        {
-            mainTextBox.Text += "*";
-        }
-
-        private void button_bracket_Click(object sender, EventArgs e)
-        {
-            if ((mainTextBox.Text.ToString().Count(t => t == '(') + mainTextBox.Text.ToString().Count(t => t == ')')) % 2 == 0)
-            {
-                mainTextBox.Text += "(";
-            } else
-            {
-                mainTextBox.Text += ")";
-            }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
