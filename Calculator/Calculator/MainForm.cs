@@ -23,7 +23,7 @@ namespace WinFormsApp1
                 pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/img.jpg");
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             } 
-            catch (Exception b) 
+            catch (Exception) 
             {
                 MessageBox.Show("Please put an image here: " + Directory.GetCurrentDirectory() + ", with the name img.jpg", "No image found.",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -40,7 +40,7 @@ namespace WinFormsApp1
                     var v = expression.Eval();
                     mainTextBox.Text = v.ToString();
                 }
-                catch (Exception b)
+                catch (Exception)
                 {
                     MessageBox.Show("Please check your format and try again.", "Incorect format.",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
