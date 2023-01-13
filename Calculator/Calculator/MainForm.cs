@@ -15,9 +15,21 @@ namespace WinFormsApp1
     public partial class MainForm : Form
     {
 
+        String memoryItem;
+
         public MainForm()
         {
             InitializeComponent();
+            try
+            {
+                pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/img.jpg");
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            } 
+            catch (Exception b) 
+            {
+                MessageBox.Show("Please put an image here: " + Directory.GetCurrentDirectory() + ", with the name img.jpg", "No image found.",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -37,17 +49,42 @@ namespace WinFormsApp1
                     MessageBox.Show("Please check your format and try again.", "Incorect format.",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } else if(((Button)sender).Text == "C")
+            } 
+            else if(((Button)sender).Text == "C")
             {
                 mainTextBox.Clear();
                 listBox1.Items.Clear();
-            } else if(((Button)sender).Text == "CE")
+                memoryItem = "";
+            } 
+            else if(((Button)sender).Text == "CE")
             {
                 mainTextBox.Clear();
-            } else if (((Button)sender).Text == "<-")
+            } 
+            else if (((Button)sender).Text == "<-")
             {
                 mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length - 1);
-            } else if (((Button)sender).Text == "()")
+            }
+            else if (((Button)sender).Text == "1/x")
+            {
+                mainTextBox.Text += "1/";
+            }
+            else if (((Button)sender).Text == "x^2")
+            {
+                mainTextBox.Text += "^2";
+            }
+            else if (((Button)sender).Text == "MC")
+            {
+                memoryItem = "";
+            }
+            else if (((Button)sender).Text == "MR")
+            {
+                mainTextBox.Text += memoryItem;
+            }
+            else if (((Button)sender).Text == "M+")
+            {
+                memoryItem = mainTextBox.Text;
+            }
+            else if (((Button)sender).Text == "()")
             {
                 if ((mainTextBox.Text.ToString().Count(t => t == '(') + mainTextBox.Text.ToString().Count(t => t == ')')) % 2 == 0)
                 {
@@ -57,7 +94,8 @@ namespace WinFormsApp1
                 {
                     mainTextBox.Text += ")";
                 }
-            } else
+            } 
+            else
             {
                 mainTextBox.Text += ((Button)sender).Text.ToString();
             }
