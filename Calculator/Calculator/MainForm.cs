@@ -15,8 +15,6 @@ namespace WinFormsApp1
     public partial class MainForm : Form
     {
 
-        String memoryItem;
-
         public MainForm()
         {
             InitializeComponent();
@@ -41,8 +39,6 @@ namespace WinFormsApp1
                 {
                     var v = expression.Eval();
                     mainTextBox.Text = v.ToString();
-                    // Items Are added to list, but just not scrolled to bottom automatically.
-                    listBox1.Items.Add(v.ToString());
                 }
                 catch (Exception b)
                 {
@@ -53,8 +49,7 @@ namespace WinFormsApp1
             else if(((Button)sender).Text == "C")
             {
                 mainTextBox.Clear();
-                listBox1.Items.Clear();
-                memoryItem = "";
+                memoryTxtBx.Text = "";
             } 
             else if(((Button)sender).Text == "CE")
             {
@@ -74,15 +69,15 @@ namespace WinFormsApp1
             }
             else if (((Button)sender).Text == "MC")
             {
-                memoryItem = "";
+                memoryTxtBx.Text = "";
             }
             else if (((Button)sender).Text == "MR")
             {
-                mainTextBox.Text += memoryItem;
+                mainTextBox.Text += memoryTxtBx.Text;
             }
             else if (((Button)sender).Text == "M+")
             {
-                memoryItem = mainTextBox.Text;
+                memoryTxtBx.Text = mainTextBox.Text;
             }
             else if (((Button)sender).Text == "()")
             {
