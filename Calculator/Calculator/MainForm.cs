@@ -57,7 +57,10 @@ namespace WinFormsApp1
             } 
             else if (((Button)sender).Text == "<-")
             {
-                mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length - 1);
+                if (mainTextBox.Text.Length != 0)
+                {
+                    mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length - 1);
+                }
             }
             else if (((Button)sender).Text == "1/x")
             {
