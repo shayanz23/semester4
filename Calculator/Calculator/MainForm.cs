@@ -22,8 +22,8 @@ namespace WinFormsApp1
             {
                 pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + "/img.jpg");
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            } 
-            catch (Exception) 
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Please put an image here: " + Directory.GetCurrentDirectory() + ", with the name img.jpg", "No image found.",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -32,29 +32,33 @@ namespace WinFormsApp1
 
         private void button_Click(object sender, EventArgs e)
         {
-            if (((Button)sender).Text == "=")
+            Button b = (Button)sender;
+
+            if (b.Text == "=")
             {
                 Expression expression = new Expression(mainTextBox.Text.ToString());
                 try
                 {
-                    var v = expression.Eval();
-                    mainTextBox.Text = v.ToString();
+                    //var v = expression.Eval();
+                    //mainTextBox.Text = v.ToString();
+                    CalculatorLogic calculator = new CalculatorLogic(mainTextBox.Text.ToString());
+                    mainTextBox.Text = calculator.Calculate();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Please check your format and try again.", "Incorect format.",
+                    MessageBox.Show(ex.Message, "Incorect format.",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } 
-            else if(((Button)sender).Text == "C")
+            }
+            else if (b.Text == "C")
             {
                 mainTextBox.Clear();
                 memoryTxtBx.Text = "";
-            } 
-            else if(((Button)sender).Text == "CE")
+            }
+            else if (b.Text == "CE")
             {
                 mainTextBox.Clear();
-            } 
+            }
             else if (((Button)sender).Text == "<-")
             {
                 if (mainTextBox.Text.Length != 0)
@@ -62,27 +66,27 @@ namespace WinFormsApp1
                     mainTextBox.Text = mainTextBox.Text.Remove(mainTextBox.Text.Length - 1);
                 }
             }
-            else if (((Button)sender).Text == "1/x")
+            else if (b.Text == "1/x")
             {
                 mainTextBox.Text += "1/";
             }
-            else if (((Button)sender).Text == "x^2")
+            else if (b.Text == "x^2")
             {
                 mainTextBox.Text += "^2";
             }
-            else if (((Button)sender).Text == "MC")
+            else if (b.Text == "MC")
             {
                 memoryTxtBx.Text = "";
             }
-            else if (((Button)sender).Text == "MR")
+            else if (b.Text == "MR")
             {
                 mainTextBox.Text += memoryTxtBx.Text;
             }
-            else if (((Button)sender).Text == "M+")
+            else if (b.Text == "M+")
             {
                 memoryTxtBx.Text = mainTextBox.Text;
             }
-            else if (((Button)sender).Text == "()")
+            else if (b.Text == "()")
             {
                 if ((mainTextBox.Text.ToString().Count(t => t == '(') + mainTextBox.Text.ToString().Count(t => t == ')')) % 2 == 0)
                 {
@@ -92,10 +96,10 @@ namespace WinFormsApp1
                 {
                     mainTextBox.Text += ")";
                 }
-            } 
+            }
             else
             {
-                mainTextBox.Text += ((Button)sender).Text.ToString();
+                mainTextBox.Text += b.Text;
             }
         }
 
@@ -103,6 +107,12 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("pressed" + e.ToString);
+        }
+
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {

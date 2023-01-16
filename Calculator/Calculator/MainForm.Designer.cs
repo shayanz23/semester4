@@ -48,19 +48,19 @@
             this.button_division = new System.Windows.Forms.Button();
             this.button_power = new System.Windows.Forms.Button();
             this.button_bracket = new System.Windows.Forms.Button();
-            this.button_AC = new System.Windows.Forms.Button();
+            this.button_clear_all = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_one_over = new System.Windows.Forms.Button();
+            this.button_sqrt = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button_clear = new System.Windows.Forms.Button();
+            this.button_mem_c = new System.Windows.Forms.Button();
+            this.button_mem_read = new System.Windows.Forms.Button();
+            this.button_mem_add = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.memoryTxtBx = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -285,16 +285,16 @@
             this.button_bracket.UseVisualStyleBackColor = true;
             this.button_bracket.Click += new System.EventHandler(this.button_Click);
             // 
-            // button_AC
+            // button_clear_all
             // 
-            this.button_AC.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_AC.Location = new System.Drawing.Point(3, 232);
-            this.button_AC.Name = "button_AC";
-            this.button_AC.Size = new System.Drawing.Size(82, 38);
-            this.button_AC.TabIndex = 25;
-            this.button_AC.Text = "C";
-            this.button_AC.UseVisualStyleBackColor = true;
-            this.button_AC.Click += new System.EventHandler(this.button_Click);
+            this.button_clear_all.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_clear_all.Location = new System.Drawing.Point(3, 232);
+            this.button_clear_all.Name = "button_clear_all";
+            this.button_clear_all.Size = new System.Drawing.Size(82, 38);
+            this.button_clear_all.TabIndex = 25;
+            this.button_clear_all.Text = "C";
+            this.button_clear_all.UseVisualStyleBackColor = true;
+            this.button_clear_all.Click += new System.EventHandler(this.button_Click);
             // 
             // menuStrip1
             // 
@@ -338,27 +338,27 @@
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // button1
+            // button_one_over
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(265, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 38);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "1/x";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button_Click);
+            this.button_one_over.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_one_over.Location = new System.Drawing.Point(265, 189);
+            this.button_one_over.Name = "button_one_over";
+            this.button_one_over.Size = new System.Drawing.Size(82, 38);
+            this.button_one_over.TabIndex = 35;
+            this.button_one_over.Text = "1/x";
+            this.button_one_over.UseVisualStyleBackColor = true;
+            this.button_one_over.Click += new System.EventHandler(this.button_Click);
             // 
-            // button2
+            // button_sqrt
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(178, 189);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 38);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "√";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button_Click);
+            this.button_sqrt.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_sqrt.Location = new System.Drawing.Point(178, 189);
+            this.button_sqrt.Name = "button_sqrt";
+            this.button_sqrt.Size = new System.Drawing.Size(82, 38);
+            this.button_sqrt.TabIndex = 34;
+            this.button_sqrt.Text = "√";
+            this.button_sqrt.UseVisualStyleBackColor = true;
+            this.button_sqrt.Click += new System.EventHandler(this.button_Click);
             // 
             // button3
             // 
@@ -371,49 +371,49 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button_Click);
             // 
-            // button4
+            // button_clear
             // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(3, 189);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 38);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "CE";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button_Click);
+            this.button_clear.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_clear.Location = new System.Drawing.Point(3, 189);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(82, 38);
+            this.button_clear.TabIndex = 32;
+            this.button_clear.Text = "CE";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_Click);
             // 
-            // button8
+            // button_mem_c
             // 
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(3, 145);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(82, 38);
-            this.button8.TabIndex = 36;
-            this.button8.Text = "MC";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button_Click);
+            this.button_mem_c.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_mem_c.Location = new System.Drawing.Point(3, 145);
+            this.button_mem_c.Name = "button_mem_c";
+            this.button_mem_c.Size = new System.Drawing.Size(82, 38);
+            this.button_mem_c.TabIndex = 36;
+            this.button_mem_c.Text = "MC";
+            this.button_mem_c.UseVisualStyleBackColor = true;
+            this.button_mem_c.Click += new System.EventHandler(this.button_Click);
             // 
-            // button7
+            // button_mem_read
             // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(178, 145);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(82, 38);
-            this.button7.TabIndex = 37;
-            this.button7.Text = "MR";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button_Click);
+            this.button_mem_read.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_mem_read.Location = new System.Drawing.Point(178, 145);
+            this.button_mem_read.Name = "button_mem_read";
+            this.button_mem_read.Size = new System.Drawing.Size(82, 38);
+            this.button_mem_read.TabIndex = 37;
+            this.button_mem_read.Text = "MR";
+            this.button_mem_read.UseVisualStyleBackColor = true;
+            this.button_mem_read.Click += new System.EventHandler(this.button_Click);
             // 
-            // button5
+            // button_mem_add
             // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(89, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 38);
-            this.button5.TabIndex = 39;
-            this.button5.Text = "M+";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button_Click);
+            this.button_mem_add.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_mem_add.Location = new System.Drawing.Point(89, 145);
+            this.button_mem_add.Name = "button_mem_add";
+            this.button_mem_add.Size = new System.Drawing.Size(82, 38);
+            this.button_mem_add.TabIndex = 39;
+            this.button_mem_add.Text = "M+";
+            this.button_mem_add.UseVisualStyleBackColor = true;
+            this.button_mem_add.Click += new System.EventHandler(this.button_Click);
             // 
             // pictureBox1
             // 
@@ -439,17 +439,17 @@
             this.ClientSize = new System.Drawing.Size(350, 571);
             this.Controls.Add(this.memoryTxtBx);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_mem_add);
+            this.Controls.Add(this.button_mem_read);
+            this.Controls.Add(this.button_mem_c);
+            this.Controls.Add(this.button_one_over);
+            this.Controls.Add(this.button_sqrt);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button_clear);
             this.Controls.Add(this.button_division);
             this.Controls.Add(this.button_power);
             this.Controls.Add(this.button_bracket);
-            this.Controls.Add(this.button_AC);
+            this.Controls.Add(this.button_clear_all);
             this.Controls.Add(this.mainTextBox);
             this.Controls.Add(this.button_multiplication);
             this.Controls.Add(this.button_9);
@@ -475,6 +475,7 @@
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -504,19 +505,19 @@
         private Button button_division;
         private Button button_power;
         private Button button_bracket;
-        private Button button_AC;
+        private Button button_clear_all;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
-        private Button button1;
-        private Button button2;
+        private Button button_one_over;
+        private Button button_sqrt;
         private Button button3;
-        private Button button4;
-        private Button button8;
-        private Button button7;
-        private Button button5;
+        private Button button_clear;
+        private Button button_mem_c;
+        private Button button_mem_read;
+        private Button button_mem_add;
         private PictureBox pictureBox1;
         private TextBox memoryTxtBx;
     }
