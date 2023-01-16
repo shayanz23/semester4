@@ -15,6 +15,7 @@ using org.matheval.Node;
         private ArrayList foundNumbers = new ArrayList();
         private ArrayList foundOperators = new ArrayList();
         private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
+    private char[] specialOperators = { '+', '-' };
         // private char[] brackets = { '(', ')' };
         private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
         private int lastNumIndex = 0;
@@ -28,7 +29,7 @@ using org.matheval.Node;
 public String Calculate()
     {
     bool hasOperator = false;
-        if (isOperator(Expression.ElementAt(0)) || isOperator(Expression.ElementAt(Expression.Length - 1)))
+        if ((isOperator(Expression.ElementAt(0)) && !isSpecialOperator(Expression.ElementAt(0))) || isOperator(Expression.ElementAt(Expression.Length - 1)))
         {
             throw new Exception("Cannot have an operator at the beggining or end of expression.");
         } else if (Expression.ElementAt(0) == '.' || Expression.ElementAt(Expression.Length - 1) == '.') {
@@ -36,8 +37,8 @@ public String Calculate()
         }
 
         for (int i = 0; i < Expression.Length; i++)
-            {
-                if (isOperator(Expression.ElementAt(i)))
+        {
+                if (i > 0 && isOperator(Expression.ElementAt(i)))
                 {
                     hasOperator = true;
                     if (i < (Expression.Length -1) && isOperator(Expression.ElementAt(i + 1)))
@@ -54,14 +55,14 @@ public String Calculate()
                 else if (!isOperator(Expression.ElementAt(i)) 
                 && !isNum(Expression.ElementAt(i)) && Expression.ElementAt(i) != '.') {
                     throw new Exception("Unknown Symbol");
-                }
+                } 
             }
             if (hasOperator)
             {
                 return "";
             } else
             {
-                return Expression.ToString();
+            return Expression;
             }
         }
 
@@ -90,5 +91,19 @@ public String Calculate()
             }
             return result;
         }
+
+
+    public bool isSpecialOperator(char input)
+    {
+        bool result = false;
+        foreach (char op in specialOperators)
+        {
+            if (op == input)
+            {
+                result = true;
+            }
+        }
+        return result;
     }
+}
 
