@@ -60,16 +60,20 @@ class CalculatorLogic
                 else
                 {
                     StringBuilder numBuilder = new StringBuilder();
-                    for (int j = lastOpIndex; j < i; j++)
-                    {
                         if (lastOpIndex == 0)
                         {
-                            numBuilder.Append(Expression.ElementAt(j));
+                            for (int j = lastOpIndex; j < i; j++)
+                            {
+                                numBuilder.Append(Expression.ElementAt(j));
+                            }
                         } else
                         {
-                            numBuilder.Append(Expression.ElementAt(j + 1));
+                            for (int j = lastOpIndex + 1; j < i; j++)
+                            {
+                                numBuilder.Append(Expression.ElementAt(j));
+                            }
+                            
                         }
-                    }
                     lastOpIndex = i;
                     foundNumbers.Add(double.Parse(numBuilder.ToString()));
                 }
@@ -102,12 +106,23 @@ class CalculatorLogic
 
     public string calculate()
     {
-        double temp = 0;
         for (int i = 0; i < foundOperators.Count; i++)
         {
             if ((char)foundOperators[i] == '+')
             {
                 foundNumbers[i+1] = (double)foundNumbers[i] + (double)foundNumbers[i+1];
+            } 
+            else if ((char)foundOperators[i] == '*')
+            {
+                foundNumbers[i + 1] = (double)foundNumbers[i] * (double)foundNumbers[i + 1];
+            }
+            else if ((char)foundOperators[i] == '/' || (char)foundOperators[i] == '÷')
+            {
+                foundNumbers[i + 1] = (double)foundNumbers[i] / (double)foundNumbers[i + 1];
+            }
+            else if ((char)foundOperators[i] == '%')
+            {
+                foundNumbers[i + 1] = (double)foundNumbers[i] % (double)foundNumbers[i + 1];
             }
         }
         return foundNumbers[foundNumbers.Count-1].ToString();
