@@ -9,16 +9,17 @@ using System.Collections;
 using org.matheval.Node;
 
 
-    class CalculatorLogic
-    {
+class CalculatorLogic
+{
+    
     private String answer = "";
-        private ArrayList foundNumbers = new ArrayList();
-        private ArrayList foundOperators = new ArrayList();
-        private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
+    private ArrayList foundNumbers = new ArrayList();
+    private ArrayList foundOperators = new ArrayList();
+    private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
     private char[] specialOperators = { '+', '-' };
-        // private char[] brackets = { '(', ')' };
-        private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-        private int lastNumIndex = 0;
+    // private char[] brackets = { '(', ')' };
+    private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+    private int lastOpIndex = 0;
 
     public string Expression { get; set; }
 
@@ -26,9 +27,15 @@ using org.matheval.Node;
 
          
 
-public String Calculate()
+    public String Parse()
     {
-    bool hasOperator = false;
+        bool hasOperator = false;
+
+        if (Expression.Length == 0)
+        {
+            return "";
+        }
+
         if ((isOperator(Expression.ElementAt(0)) && !isSpecialOperator(Expression.ElementAt(0))) || isOperator(Expression.ElementAt(Expression.Length - 1)))
         {
             throw new Exception("Cannot have an operator at the beggining or end of expression.");
@@ -38,33 +45,74 @@ public String Calculate()
 
         for (int i = 0; i < Expression.Length; i++)
         {
-                if (i > 0 && isOperator(Expression.ElementAt(i)))
+            if (i > 0 && isOperator(Expression.ElementAt(i)))
+            {
+                hasOperator = true;
+                if (i < (Expression.Length -1) && isOperator(Expression.ElementAt(i + 1)))
                 {
-                    hasOperator = true;
-                    if (i < (Expression.Length -1) && isOperator(Expression.ElementAt(i + 1)))
-                    {
-                        throw new Exception("Two operators cannot be next to each other.");
-                    }
-                    else if ((i > 0 && Expression.ElementAt(i - 1) == '.') || 
+                    throw new Exception("Two operators cannot be next to each other.");
+                }
+                else if ((i > 0 && Expression.ElementAt(i - 1) == '.') || 
                     (i < (Expression.Length - 1) && Expression.ElementAt(i + 1) == '.'))
+                {
+                    throw new Exception("Cannot have dot next to operator.");
+                } 
+                else
+                {
+                    StringBuilder numBuilder = new StringBuilder();
+                    for (int j = lastOpIndex; j < i; j++)
                     {
-                        throw new Exception("Cannot have dot next to operator.");
-                    } 
-                    foundOperators.Add(i);
-                } 
-                else if (!isOperator(Expression.ElementAt(i)) 
-                && !isNum(Expression.ElementAt(i)) && Expression.ElementAt(i) != '.') {
-                    throw new Exception("Unknown Symbol");
-                } 
-            }
-            if (hasOperator)
+                        if (lastOpIndex == 0)
+                        {
+                            numBuilder.Append(Expression.ElementAt(j));
+                        } else
+                        {
+                            numBuilder.Append(Expression.ElementAt(j + 1));
+                        }
+                    }
+                    lastOpIndex = i;
+                    foundNumbers.Add(double.Parse(numBuilder.ToString()));
+                }
+                foundOperators.Add(Expression.ElementAt(i));
+            } 
+            else if (!isOperator(Expression.ElementAt(i)) 
+            && !isNum(Expression.ElementAt(i)) && Expression.ElementAt(i) != '.') {
+                throw new Exception("Unknown Symbol");
+            } 
+        }
+        StringBuilder numBuilder2 = new StringBuilder();
+        if (lastOpIndex == 0)
+        {
+            for (int j = lastOpIndex; j < Expression.Length; j++)
             {
-                return "";
-            } else
-            {
-            return Expression;
+                numBuilder2.Append(Expression.ElementAt(j));
             }
         }
+        else
+        {
+            for (int j = lastOpIndex; j < Expression.Length - 1; j++)
+            {
+                numBuilder2.Append(Expression.ElementAt(j + 1));
+            }
+        }
+        foundNumbers.Add(double.Parse(numBuilder2.ToString()));
+
+        return calculate();
+    }
+
+    public string calculate()
+    {
+        double temp = 0;
+        for (int i = 0; i < foundOperators.Count; i++)
+        {
+            if ((char)foundOperators[i] == '+')
+            {
+                foundNumbers[i+1] = (double)foundNumbers[i] + (double)foundNumbers[i+1];
+            }
+        }
+        return foundNumbers[foundNumbers.Count-1].ToString();
+
+    }
 
         public bool isOperator(char input)
         {

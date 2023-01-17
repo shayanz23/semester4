@@ -42,7 +42,7 @@ namespace WinFormsApp1
                     //var v = expression.Eval();
                     //mainTextBox.Text = v.ToString();
                     CalculatorLogic calculator = new CalculatorLogic(mainTextBox.Text.ToString());
-                    mainTextBox.Text = calculator.Calculate();
+                    mainTextBox.Text = calculator.Parse();
                 }
                 catch (Exception ex)
                 {
