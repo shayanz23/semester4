@@ -86,33 +86,11 @@ namespace WinFormsApp1
             {
                 memoryTxtBx.Text = mainTextBox.Text;
             }
-            else if (b.Text == "()")
-            {
-                if ((mainTextBox.Text.ToString().Count(t => t == '(') + mainTextBox.Text.ToString().Count(t => t == ')')) % 2 == 0)
-                {
-                    mainTextBox.Text += "(";
-                }
-                else
-                {
-                    mainTextBox.Text += ")";
-                }
-            }
             else
             {
                 mainTextBox.Text += b.Text;
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("pressed" + e.ToString);
-        }
-
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -124,5 +102,80 @@ namespace WinFormsApp1
             this.Close();
         }
 
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D0)
+            {
+                button_0.PerformClick();
+            } 
+            else if (e.KeyCode == Keys.D1)
+            {
+                button_1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2)
+            {
+                button_2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3)
+            {
+                button_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D4)
+            {
+                button_4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D5)
+            {
+                button_5.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D6)
+            {
+                button_power.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D6)
+            {
+                button_6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D7)
+            {
+                button_7.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D8)
+            {
+                button_multiplication.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D8)
+            {
+                button_8.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D9)
+            {
+                button_9.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.Oemplus)
+            {
+                button_addition.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Oemplus)
+            {
+                button_answer.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                button_back.PerformClick();
+            }
+            else if (e.KeyCode == Keys.OemMinus)
+            {
+                button_subtraction.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                button_division.PerformClick();
+            }
+            else if (e.KeyCode == Keys.OemPeriod)
+            {
+                button_dot.PerformClick();
+            }
+        }
     }
 }

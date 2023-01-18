@@ -47,7 +47,6 @@
             this.mainTextBox = new System.Windows.Forms.TextBox();
             this.button_division = new System.Windows.Forms.Button();
             this.button_power = new System.Windows.Forms.Button();
-            this.button_bracket = new System.Windows.Forms.Button();
             this.button_clear_all = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -255,7 +254,7 @@
             // button_division
             // 
             this.button_division.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_division.Location = new System.Drawing.Point(265, 232);
+            this.button_division.Location = new System.Drawing.Point(178, 233);
             this.button_division.Name = "button_division";
             this.button_division.Size = new System.Drawing.Size(82, 38);
             this.button_division.TabIndex = 28;
@@ -266,24 +265,13 @@
             // button_power
             // 
             this.button_power.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_power.Location = new System.Drawing.Point(178, 232);
+            this.button_power.Location = new System.Drawing.Point(89, 234);
             this.button_power.Name = "button_power";
             this.button_power.Size = new System.Drawing.Size(82, 38);
             this.button_power.TabIndex = 27;
             this.button_power.Text = "x^2";
             this.button_power.UseVisualStyleBackColor = true;
             this.button_power.Click += new System.EventHandler(this.button_Click);
-            // 
-            // button_bracket
-            // 
-            this.button_bracket.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_bracket.Location = new System.Drawing.Point(89, 232);
-            this.button_bracket.Name = "button_bracket";
-            this.button_bracket.Size = new System.Drawing.Size(82, 38);
-            this.button_bracket.TabIndex = 26;
-            this.button_bracket.Text = "()";
-            this.button_bracket.UseVisualStyleBackColor = true;
-            this.button_bracket.Click += new System.EventHandler(this.button_Click);
             // 
             // button_clear_all
             // 
@@ -341,7 +329,7 @@
             // button_one_over
             // 
             this.button_one_over.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_one_over.Location = new System.Drawing.Point(265, 189);
+            this.button_one_over.Location = new System.Drawing.Point(265, 234);
             this.button_one_over.Name = "button_one_over";
             this.button_one_over.Size = new System.Drawing.Size(82, 38);
             this.button_one_over.TabIndex = 35;
@@ -419,7 +407,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(265, 145);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 82);
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
             // 
@@ -448,7 +436,6 @@
             this.Controls.Add(this.button_clear);
             this.Controls.Add(this.button_division);
             this.Controls.Add(this.button_power);
-            this.Controls.Add(this.button_bracket);
             this.Controls.Add(this.button_clear_all);
             this.Controls.Add(this.mainTextBox);
             this.Controls.Add(this.button_multiplication);
@@ -469,13 +456,13 @@
             this.Controls.Add(this.button_1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -504,7 +491,6 @@
         private TextBox mainTextBox;
         private Button button_division;
         private Button button_power;
-        private Button button_bracket;
         private Button button_clear_all;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;

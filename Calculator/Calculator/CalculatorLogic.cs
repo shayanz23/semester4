@@ -12,12 +12,10 @@ using org.matheval.Node;
 class CalculatorLogic
 {
     
-    private String answer = "";
     private ArrayList foundNumbers = new ArrayList();
     private ArrayList foundOperators = new ArrayList();
     private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
-    private char[] specialOperators = { '+', '-' };
-    // private char[] brackets = { '(', ')' };
+    private char[] specialOperators = { '+', '-' , '√' };
     private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
     private int lastOpIndex = 0;
 
@@ -29,8 +27,6 @@ class CalculatorLogic
 
     public String Parse()
     {
-        bool hasOperator = false;
-
         if (Expression.Length == 0)
         {
             return "";
@@ -45,10 +41,9 @@ class CalculatorLogic
 
         for (int i = 0; i < Expression.Length; i++)
         {
-            if (i > 0 && isOperator(Expression.ElementAt(i)))
+            if ((i > 0 || Expression.ElementAt(i) == '√') && isOperator(Expression.ElementAt(i)))
             {
-                hasOperator = true;
-                if (i < (Expression.Length -1) && isOperator(Expression.ElementAt(i + 1)))
+                if (i < (Expression.Length -1) && (isOperator(Expression.ElementAt(i + 1)) && Expression.ElementAt(i+1) != '√'))
                 {
                     throw new Exception("Two operators cannot be next to each other.");
                 }
@@ -60,13 +55,14 @@ class CalculatorLogic
                 else
                 {
                     StringBuilder numBuilder = new StringBuilder();
-                        if (lastOpIndex == 0)
+                        if (lastOpIndex == 0 && Expression.ElementAt(i) != '√')
                         {
                             for (int j = lastOpIndex; j < i; j++)
                             {
                                 numBuilder.Append(Expression.ElementAt(j));
                             }
-                        } else
+                        } 
+                        else if (Expression.ElementAt(i) != '√')
                         {
                             for (int j = lastOpIndex + 1; j < i; j++)
                             {
@@ -75,7 +71,10 @@ class CalculatorLogic
                             
                         }
                     lastOpIndex = i;
-                    foundNumbers.Add(double.Parse(numBuilder.ToString()));
+                    if (numBuilder.Length != 0)
+                    {
+                        foundNumbers.Add(double.Parse(numBuilder.ToString()));
+                    }
                 }
                 foundOperators.Add(Expression.ElementAt(i));
             } 
@@ -85,7 +84,7 @@ class CalculatorLogic
             } 
         }
         StringBuilder numBuilder2 = new StringBuilder();
-        if (lastOpIndex == 0)
+        if (lastOpIndex == 0 && Expression.ElementAt(0) != '√')
         {
             for (int j = lastOpIndex; j < Expression.Length; j++)
             {
@@ -94,9 +93,9 @@ class CalculatorLogic
         }
         else
         {
-            for (int j = lastOpIndex; j < Expression.Length - 1; j++)
+            for (int j = lastOpIndex+1; j < Expression.Length ; j++)
             {
-                numBuilder2.Append(Expression.ElementAt(j + 1));
+                numBuilder2.Append(Expression.ElementAt(j));
             }
         }
         foundNumbers.Add(double.Parse(numBuilder2.ToString()));
@@ -111,18 +110,38 @@ class CalculatorLogic
             if ((char)foundOperators[i] == '+')
             {
                 foundNumbers[i+1] = (double)foundNumbers[i] + (double)foundNumbers[i+1];
-            } 
+            }
+            else if ((char)foundOperators[i] == '-')
+            {
+                foundNumbers[i + 1] = (double)foundNumbers[i] - (double)foundNumbers[i + 1];
+            }
             else if ((char)foundOperators[i] == '*')
             {
                 foundNumbers[i + 1] = (double)foundNumbers[i] * (double)foundNumbers[i + 1];
             }
             else if ((char)foundOperators[i] == '/' || (char)foundOperators[i] == '÷')
             {
-                foundNumbers[i + 1] = (double)foundNumbers[i] / (double)foundNumbers[i + 1];
+                if ((double)foundNumbers[i + 1] == 0)
+                {
+                    throw new Exception("Cannot divide by zero.");
+                }
+                    foundNumbers[i + 1] = (double)foundNumbers[i] / (double)foundNumbers[i + 1];
             }
             else if ((char)foundOperators[i] == '%')
             {
                 foundNumbers[i + 1] = (double)foundNumbers[i] % (double)foundNumbers[i + 1];
+            }
+            else if ((char)foundOperators[i] == '^')
+            {
+                foundNumbers[i + 1] = Math.Pow((double)foundNumbers[i], (double)foundNumbers[i + 1]);
+            }
+            else if ((char)foundOperators[i] == '√')
+            {
+                if (i+1 == foundNumbers.Count)
+                {
+                    foundNumbers.Add(0);
+                }
+                foundNumbers[i + 1] = Math.Sqrt((double)foundNumbers[i]);
             }
         }
         return foundNumbers[foundNumbers.Count-1].ToString();
