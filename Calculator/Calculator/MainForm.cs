@@ -6,15 +6,15 @@
 /// EXternal Libraries: https://matheval.org/
 /// </summary>
 
-using org.matheval;
-using org.matheval.Node;
-using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
 
+        /// <summary>
+        /// Mainform.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -30,17 +30,19 @@ namespace WinFormsApp1
             }
         }
 
+        /// <summary>
+        /// Click method for all buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
 
             if (b.Text == "=")
             {
-                Expression expression = new Expression(mainTextBox.Text.ToString());
                 try
                 {
-                    //var v = expression.Eval();
-                    //mainTextBox.Text = v.ToString();
                     CalculatorLogic calculator = new CalculatorLogic(mainTextBox.Text.ToString());
                     mainTextBox.Text = calculator.Parse();
                 }
@@ -92,16 +94,31 @@ namespace WinFormsApp1
             }
         }
 
+        /// <summary>
+        /// About screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Calculator\nVersion: 2\nBy: Shayan Zahedanaraki");
         }
 
+        /// <summary>
+        /// Exit top toolbar button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Keydown method.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.D0)

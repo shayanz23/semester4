@@ -13,17 +13,24 @@ class CalculatorLogic
 {
     // Found numbers in the expression.
     private ArrayList foundNumbers = new ArrayList();
+
     // Found operators in the expression.
     private ArrayList foundOperators = new ArrayList();
+
     // List of acceptedoperators.
     private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
+
     // List of special operators, for example exempt from the "Cannot have an operator at the beggining" rule.
     private char[] specialOperators = { '+', '-' };
+
     // List of accepted numbers
     private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+
     // last operator index, for knowing where to continue from to get numbers in between operators.
     private int lastOpIndex = 0;
+
     // The original expression, that if it has square roots, will be changed later to have the answers instead, before the normal processing starts.
+
     public string Expression { get; set; }
 
     // Constructor to set the Expression value.
@@ -204,10 +211,6 @@ class CalculatorLogic
             else if ((char)foundOperators[i] == '^')
             {
                 foundNumbers[i + 1] = Math.Pow((double)foundNumbers[i], (double)foundNumbers[i + 1]);
-            }
-            else if ((char)foundOperators[i] == '√')
-            {
-               // foundNumbers[i + 1] = Math.Pow((double)foundNumbers[i+1], (1/(double)foundNumbers[i]));
             }
         }
         return foundNumbers[foundNumbers.Count-1].ToString();
