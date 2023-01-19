@@ -11,26 +11,39 @@ using org.matheval.Node;
 
 class CalculatorLogic
 {
-    
+    // Found numbers in the expression.
     private ArrayList foundNumbers = new ArrayList();
+    // Found operators in the expression.
     private ArrayList foundOperators = new ArrayList();
+    // List of acceptedoperators.
     private char[] operators = { '+', '-', '/', '%', '*', '÷', '^', '√' };
-    private char[] specialOperators = { '+', '-' , '√' };
+    // List of special operators, for example exempt from the "Cannot have an operator at the beggining" rule.
+    private char[] specialOperators = { '+', '-' };
+    // List of accepted numbers
     private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+    // last operator index, for knowing where to continue from to get numbers in between operators.
     private int lastOpIndex = 0;
-
+    // The original expression, that if it has square roots, will be changed later to have the answers instead, before the normal processing starts.
     public string Expression { get; set; }
 
+    // Constructor to set the Expression value.
     public CalculatorLogic(String expression) => Expression = expression;
 
          
 
+    /// <summary>
+    /// Parses the expression into two arraylists of operators and numbers. Also checks formatting.
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public String Parse()
     {
         if (Expression.Length == 0)
         {
             return "";
         }
+
+        this.formatRoots();
 
         if ((isOperator(Expression.ElementAt(0)) && !isSpecialOperator(Expression.ElementAt(0))) || isOperator(Expression.ElementAt(Expression.Length - 1)))
         {
@@ -41,7 +54,7 @@ class CalculatorLogic
 
         for (int i = 0; i < Expression.Length; i++)
         {
-            if ((i > 0 || Expression.ElementAt(i) == '√') && isOperator(Expression.ElementAt(i)))
+            if (i > 0 && isOperator(Expression.ElementAt(i)))
             {
                 if (i < (Expression.Length -1) && (isOperator(Expression.ElementAt(i + 1)) && Expression.ElementAt(i+1) != '√'))
                 {
@@ -55,14 +68,14 @@ class CalculatorLogic
                 else
                 {
                     StringBuilder numBuilder = new StringBuilder();
-                        if (lastOpIndex == 0 && Expression.ElementAt(i) != '√')
+                        if (lastOpIndex == 0)
                         {
                             for (int j = lastOpIndex; j < i; j++)
                             {
                                 numBuilder.Append(Expression.ElementAt(j));
                             }
                         } 
-                        else if (Expression.ElementAt(i) != '√')
+                        else
                         {
                             for (int j = lastOpIndex + 1; j < i; j++)
                             {
@@ -84,7 +97,7 @@ class CalculatorLogic
             } 
         }
         StringBuilder numBuilder2 = new StringBuilder();
-        if (lastOpIndex == 0 && Expression.ElementAt(0) != '√')
+        if (lastOpIndex == 0)
         {
             for (int j = lastOpIndex; j < Expression.Length; j++)
             {
@@ -103,6 +116,63 @@ class CalculatorLogic
         return calculate();
     }
 
+
+    /// <summary>
+    /// Solves roots separately, creates a new string with the answers to the roots instead of the roots.
+    /// </summary>
+    public void formatRoots()
+    {
+        StringBuilder tempStringBuilder = new StringBuilder();
+        StringBuilder tempSqrtBuilder = new StringBuilder();
+        Double tempSqrt;
+        for (int i = 0; i < Expression.Length; i++)
+        {
+            if (Expression.ElementAt(i) == '√')
+            {
+                if (i != 0 && !isOperator(Expression.ElementAt(i - 1)))
+                {
+                    tempStringBuilder.Append('*');
+                    for (int j = i; j < Expression.Length && (!isOperator(Expression.ElementAt(j)) || i == j); j++)
+                    {   
+                        if (!isOperator(Expression.ElementAt(j)))
+                        {
+                            tempSqrtBuilder.Append(Expression.ElementAt(j));
+                            i++;
+                        }
+                    }
+                    
+                    tempSqrt = Math.Sqrt(Double.Parse(tempSqrtBuilder.ToString()));
+                    tempStringBuilder.Append(tempSqrt);
+                } else
+                {
+                    for ( int j = i; j < Expression.Length && (!isOperator(Expression.ElementAt(j)) || j == i); j++)
+                    {
+                        if (!isOperator(Expression.ElementAt(j)))
+                        {
+                            tempSqrtBuilder.Append(Expression.ElementAt(j));
+                            i++;
+                        }
+                    }
+
+                    tempSqrt = Math.Sqrt(Double.Parse(tempSqrtBuilder.ToString()));
+                    tempStringBuilder.Append(tempSqrt);
+                }
+            } else
+            {
+                    tempStringBuilder.Append(Expression.ElementAt(i));
+
+                
+            }
+        }
+        Expression = tempStringBuilder.ToString();
+    }
+    
+    /// <summary>
+    /// Calculates the answers to each part of the expression, by doing the ith operation on ith and i+1th numbers and
+    /// sets the i+1th equal to the answer.
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public string calculate()
     {
         for (int i = 0; i < foundOperators.Count; i++)
@@ -137,17 +207,18 @@ class CalculatorLogic
             }
             else if ((char)foundOperators[i] == '√')
             {
-                if (i+1 == foundNumbers.Count)
-                {
-                    foundNumbers.Add(0);
-                }
-                foundNumbers[i + 1] = Math.Sqrt((double)foundNumbers[i]);
+               // foundNumbers[i + 1] = Math.Pow((double)foundNumbers[i+1], (1/(double)foundNumbers[i]));
             }
         }
         return foundNumbers[foundNumbers.Count-1].ToString();
 
     }
 
+    /// <summary>
+    /// Checks if char is an operator just by looping through known operators.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
         public bool isOperator(char input)
         {
             bool result = false;
@@ -161,7 +232,12 @@ class CalculatorLogic
             return result;
         }
 
-        public bool isNum(char input)
+    /// <summary>
+    /// Checks if char is an number just by looping through known numbers.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public bool isNum(char input)
         {
             bool result = false;
             foreach (char num in numbers)
@@ -175,6 +251,11 @@ class CalculatorLogic
         }
 
 
+    /// <summary>
+    /// Checks if char is an special operator just by looping through known special operators.
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     public bool isSpecialOperator(char input)
     {
         bool result = false;
