@@ -26,6 +26,7 @@ namespace MDI
             {
                 this.Size = new Size(640, 480);
                 Bitmap bitmap = new Bitmap(640, 480, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+
                 Graphics graphics = Graphics.FromImage(bitmap);
                 Rectangle rectangle = new Rectangle(0, 0, 640, 480);
                 graphics.FillRectangle(blueBrush, rectangle);
