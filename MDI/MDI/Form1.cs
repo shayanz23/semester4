@@ -9,11 +9,16 @@ namespace MDI
 
         private void newMenuItem_Click(object sender, EventArgs e)
         {
+            int option;
             using (NewImageDialog newImageDialog = new NewImageDialog())
             {
                 if (newImageDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.Text = newImageDialog.SelectedRes.ToString();
+
+                    option = newImageDialog.SelectedRes;
+                        MDIChild mDIChild = new MDIChild(option);
+                        mDIChild.MdiParent = this;
+                        mDIChild.Show();
                 }
             }
         }

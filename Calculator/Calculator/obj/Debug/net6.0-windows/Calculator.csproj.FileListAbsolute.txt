@@ -56,3 +56,4 @@ C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calcula
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.genruntimeconfig.cache
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Properties.Resources.resources
+C:\Users\Shayan\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Properties.Resources.resources
