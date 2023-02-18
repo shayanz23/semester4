@@ -42,22 +42,18 @@
             this.groupBox1.Controls.Add(this.NewImageChoice3);
             this.groupBox1.Controls.Add(this.NewImageChoice2);
             this.groupBox1.Controls.Add(this.NewImageChoice1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.groupBox1.Size = new System.Drawing.Size(492, 273);
+            this.groupBox1.Size = new System.Drawing.Size(265, 128);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // NewImageChoice3
             // 
             this.NewImageChoice3.AutoSize = true;
-            this.NewImageChoice3.Location = new System.Drawing.Point(11, 207);
-            this.NewImageChoice3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NewImageChoice3.Location = new System.Drawing.Point(6, 97);
             this.NewImageChoice3.Name = "NewImageChoice3";
-            this.NewImageChoice3.Size = new System.Drawing.Size(161, 36);
+            this.NewImageChoice3.Size = new System.Drawing.Size(79, 19);
             this.NewImageChoice3.TabIndex = 2;
             this.NewImageChoice3.TabStop = true;
             this.NewImageChoice3.Text = "1024 x 768";
@@ -67,10 +63,9 @@
             // NewImageChoice2
             // 
             this.NewImageChoice2.AutoSize = true;
-            this.NewImageChoice2.Location = new System.Drawing.Point(11, 126);
-            this.NewImageChoice2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NewImageChoice2.Location = new System.Drawing.Point(6, 59);
             this.NewImageChoice2.Name = "NewImageChoice2";
-            this.NewImageChoice2.Size = new System.Drawing.Size(148, 36);
+            this.NewImageChoice2.Size = new System.Drawing.Size(73, 19);
             this.NewImageChoice2.TabIndex = 1;
             this.NewImageChoice2.TabStop = true;
             this.NewImageChoice2.Text = "800 x 600";
@@ -80,10 +75,9 @@
             // NewImageChoice1
             // 
             this.NewImageChoice1.AutoSize = true;
-            this.NewImageChoice1.Location = new System.Drawing.Point(11, 47);
-            this.NewImageChoice1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.NewImageChoice1.Location = new System.Drawing.Point(6, 22);
             this.NewImageChoice1.Name = "NewImageChoice1";
-            this.NewImageChoice1.Size = new System.Drawing.Size(148, 36);
+            this.NewImageChoice1.Size = new System.Drawing.Size(73, 19);
             this.NewImageChoice1.TabIndex = 0;
             this.NewImageChoice1.TabStop = true;
             this.NewImageChoice1.Text = "640 x 480";
@@ -93,10 +87,9 @@
             // newImageOKButton
             // 
             this.newImageOKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.newImageOKButton.Location = new System.Drawing.Point(555, 70);
-            this.newImageOKButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.newImageOKButton.Location = new System.Drawing.Point(299, 33);
             this.newImageOKButton.Name = "newImageOKButton";
-            this.newImageOKButton.Size = new System.Drawing.Size(139, 49);
+            this.newImageOKButton.Size = new System.Drawing.Size(75, 23);
             this.newImageOKButton.TabIndex = 1;
             this.newImageOKButton.Text = "OK";
             this.newImageOKButton.UseVisualStyleBackColor = true;
@@ -104,24 +97,22 @@
             // newImageCancelButton
             // 
             this.newImageCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.newImageCancelButton.Location = new System.Drawing.Point(555, 222);
-            this.newImageCancelButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.newImageCancelButton.Location = new System.Drawing.Point(299, 104);
             this.newImageCancelButton.Name = "newImageCancelButton";
-            this.newImageCancelButton.Size = new System.Drawing.Size(139, 49);
+            this.newImageCancelButton.Size = new System.Drawing.Size(75, 23);
             this.newImageCancelButton.TabIndex = 2;
             this.newImageCancelButton.Text = "Cancel";
             this.newImageCancelButton.UseVisualStyleBackColor = true;
             // 
             // NewImageDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 322);
+            this.ClientSize = new System.Drawing.Size(394, 151);
             this.Controls.Add(this.newImageCancelButton);
             this.Controls.Add(this.newImageOKButton);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewImageDialog";

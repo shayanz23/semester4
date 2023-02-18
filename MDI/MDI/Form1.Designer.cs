@@ -63,7 +63,7 @@
             this.windowsMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1346, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,6 +79,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // newMenuItem
             // 
@@ -92,24 +93,28 @@
             this.openFromFileMenuItem.Name = "openFromFileMenuItem";
             this.openFromFileMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openFromFileMenuItem.Text = "Open from File";
+            this.openFromFileMenuItem.Click += new System.EventHandler(this.openFromFileMenuItem_Click);
             // 
             // openFromWebMenuItem
             // 
             this.openFromWebMenuItem.Name = "openFromWebMenuItem";
             this.openFromWebMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openFromWebMenuItem.Text = "Open from Web";
+            this.openFromWebMenuItem.Click += new System.EventHandler(this.openFromWebToolStripMenuItem_Click);
             // 
             // saveMenuItem
             // 
             this.saveMenuItem.Name = "saveMenuItem";
             this.saveMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveMenuItem.Text = "Save";
+            this.saveMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
             // 
             // saveAsMenuItem
             // 
             this.saveAsMenuItem.Name = "saveAsMenuItem";
             this.saveAsMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsMenuItem.Text = "Save As";
+            this.saveAsMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
             // 
             // exitMenuItem
             // 
@@ -131,26 +136,29 @@
             // cascadeMenuItem
             // 
             this.cascadeMenuItem.Name = "cascadeMenuItem";
-            this.cascadeMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.cascadeMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cascadeMenuItem.Text = "Cascade";
+            this.cascadeMenuItem.Click += new System.EventHandler(this.cascadeMenuItem_Click);
             // 
             // tileHorizontalMenuItem
             // 
             this.tileHorizontalMenuItem.Name = "tileHorizontalMenuItem";
-            this.tileHorizontalMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.tileHorizontalMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tileHorizontalMenuItem.Text = "Tile Horizontal";
+            this.tileHorizontalMenuItem.Click += new System.EventHandler(this.tileHorizontalMenuItem_Click);
             // 
             // tileVerticalMenuItem
             // 
             this.tileVerticalMenuItem.Name = "tileVerticalMenuItem";
-            this.tileVerticalMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.tileVerticalMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tileVerticalMenuItem.Text = "Tile Vertical";
+            this.tileVerticalMenuItem.Click += new System.EventHandler(this.tileVerticalMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1346, 845);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
@@ -171,12 +179,12 @@
         private ToolStripMenuItem windowsMenuItem;
         private ToolStripMenuItem newMenuItem;
         private ToolStripMenuItem openFromFileMenuItem;
-        private ToolStripMenuItem openFromWebMenuItem;
         private ToolStripMenuItem saveMenuItem;
         private ToolStripMenuItem saveAsMenuItem;
         private ToolStripMenuItem exitMenuItem;
         private ToolStripMenuItem cascadeMenuItem;
         private ToolStripMenuItem tileHorizontalMenuItem;
         private ToolStripMenuItem tileVerticalMenuItem;
+        private ToolStripMenuItem openFromWebMenuItem;
     }
 }

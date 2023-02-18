@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MDIChild
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            this.Name = "MDIChild";
+            this.Text = "MDI Child";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MDIChild_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

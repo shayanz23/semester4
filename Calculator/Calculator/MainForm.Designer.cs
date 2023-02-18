@@ -244,12 +244,15 @@
             // 
             // mainTextBox
             // 
+            this.mainTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mainTextBox.Font = new System.Drawing.Font("Segoe UI", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mainTextBox.Location = new System.Drawing.Point(3, 27);
             this.mainTextBox.Name = "mainTextBox";
             this.mainTextBox.ReadOnly = true;
+            this.mainTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mainTextBox.Size = new System.Drawing.Size(344, 70);
             this.mainTextBox.TabIndex = 24;
+            this.mainTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button_division
             // 
@@ -461,6 +464,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.menuStrip1.ResumeLayout(false);
