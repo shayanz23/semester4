@@ -110,7 +110,7 @@ namespace WinFormsApp1
         /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Calculator\nVersion: 2\nBy: Shayan Zahedanaraki");
+            MessageBox.Show("Calculator\nVersion: 2.1\nBy: Shayan Zahedanaraki");
         }
 
         /// <summary>
