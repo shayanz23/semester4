@@ -92,8 +92,15 @@ namespace WinFormsApp1
             {
                 mainTextBox.Text += b.Text;
             }
-            mainTextBox.SelectionStart = mainTextBox.TextLength;
-            mainTextBox.ScrollToCaret();
+            if (b.Text != "=")
+            {
+                mainTextBox.SelectionStart = mainTextBox.TextLength;
+                mainTextBox.ScrollToCaret();
+            } else
+            {
+                mainTextBox.SelectionStart = 0;
+                mainTextBox.ScrollToCaret();
+            }
         }
 
         /// <summary>
