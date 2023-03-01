@@ -92,8 +92,15 @@ namespace Calculator
             {
                 mainTextBox.Text += b.Text;
             }
-            mainTextBox.SelectionStart = mainTextBox.TextLength;
-            mainTextBox.ScrollToCaret();
+            if (b.Text != "=")
+            {
+                mainTextBox.SelectionStart = mainTextBox.TextLength;
+                mainTextBox.ScrollToCaret();
+            } else
+            {
+                mainTextBox.SelectionStart = 0;
+                mainTextBox.ScrollToCaret();
+            }
         }
 
         /// <summary>
@@ -103,7 +110,7 @@ namespace Calculator
         /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Calculator\nVersion: 2\nBy: Shayan Zahedanaraki");
+            MessageBox.Show("Calculator\nVersion: 2.1\nBy: Shayan Zahedanaraki");
         }
 
         /// <summary>

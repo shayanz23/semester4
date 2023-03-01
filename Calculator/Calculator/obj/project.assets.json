@@ -45,19 +45,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Donkey\\.nuget\\packages\\": {}
+    "C:\\Users\\Shayan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Donkey\\semester4\\Calculator\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\Shayan\\semester4\\Calculator\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "C:\\Users\\Donkey\\semester4\\Calculator\\Calculator\\Calculator.csproj",
-      "packagesPath": "C:\\Users\\Donkey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Donkey\\semester4\\Calculator\\Calculator\\obj\\",
+      "projectPath": "C:\\Users\\Shayan\\semester4\\Calculator\\Calculator\\Calculator.csproj",
+      "packagesPath": "C:\\Users\\Shayan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Shayan\\semester4\\Calculator\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Donkey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Shayan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -108,7 +113,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

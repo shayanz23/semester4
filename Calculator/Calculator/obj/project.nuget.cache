@@ -1,10 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "i+XyBtyClBOR4aAdOxkpgePhbxtis/Rzyv6pO/kJYNYQacBfiIKPSyk9NuVBoDzp1DhN/EH5gYutEL5SFghbtA==",
+=======
+  "dgSpecHash": "GT7DE4iAk9/LnzQ9r6J02Wrs140sN5eu9ZEm2rsYMyc3WaZu9rBf644IsQEmbCbGwge/24QxotQxj3UiW5E2GA==",
+>>>>>>> c90f4e295951d88f7b2b98bddd09bfab0bef6200
   "success": true,
-  "projectFilePath": "C:\\Users\\Donkey\\semester4\\Calculator\\Calculator\\Calculator.csproj",
+  "projectFilePath": "C:\\Users\\Shayan\\semester4\\Calculator\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Donkey\\.nuget\\packages\\org.matheval\\1.0.0.3\\org.matheval.1.0.0.3.nupkg.sha512"
+    "C:\\Users\\Shayan\\.nuget\\packages\\org.matheval\\1.0.0.3\\org.matheval.1.0.0.3.nupkg.sha512"
   ],
   "logs": []
 }
