@@ -43,7 +43,6 @@ C:\Users\Donkey\semester4\Calculator\Calculator\bin\Debug\net6.0-windows\Calcula
 C:\Users\Donkey\semester4\Calculator\Calculator\bin\Debug\net6.0-windows\Calculator.pdb
 C:\Users\Donkey\semester4\Calculator\Calculator\bin\Debug\net6.0-windows\org.matheval.dll
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.AssemblyReference.cache
-C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\WinFormsApp1.MainForm.resources
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.csproj.GenerateResource.cache
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.AssemblyInfoInputs.cache
@@ -57,3 +56,4 @@ C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calcula
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\ref\Calculator.dll
 C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Properties.Resources.resources
 C:\Users\Shayan\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.Properties.Resources.resources
+C:\Users\Donkey\semester4\Calculator\Calculator\obj\Debug\net6.0-windows\Calculator.MainForm.resources
