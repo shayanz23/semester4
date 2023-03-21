@@ -1,0 +1,8 @@
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\bin\Debug\ControlLibraryShayan.dll
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\bin\Debug\ControlLibraryShayan.pdb
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.csproj.AssemblyReference.cache
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.csproj.GenerateResource.cache
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.csproj.CoreCompileInputs.cache
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.dll
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.pdb
+C:\Users\Donkey\semester4\ControlLibraryShayan\ControlLibraryShayan\obj\Debug\ControlLibraryShayan.UserControlRGBShayan.resources

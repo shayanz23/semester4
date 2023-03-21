@@ -1,0 +1,13 @@
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\bin\Debug\ControlLibraryShayan.pdb
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\Lab7TestApp.csproj.AssemblyReference.cache
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\Lab7TestApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\Lab7TestApp.csproj.GenerateResource.cache
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\Lab7TestApp.csproj.CoreCompileInputs.cache
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\Lab7TestApp.csproj.CopyComplete
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Donkey\semester4\Lab7TestApp\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
